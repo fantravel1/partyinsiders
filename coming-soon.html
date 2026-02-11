@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Coming Soon - PartyInsiders | Nightlife Intelligence</title>
+  <meta name="description" content="This section of PartyInsiders is coming soon. We're building the world's most intelligent nightlife platform. Insider guides, city rankings, and scene-respectful travel intelligence.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://partyinsiders.com/coming-soon">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coming Soon - PartyInsiders">
+  <meta property="og:description" content="The world's most intelligent nightlife platform is being built. Stay tuned.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --c-black: #000000;
+      --c-deep: #06060c;
+      --c-card: #0e0e18;
+      --c-border: rgba(255, 255, 255, 0.06);
+      --c-text: #f0f0f0;
+      --c-text-mid: #a0a0b0;
+      --c-text-dim: #606070;
+      --c-accent: #ff2d55;
+      --c-purple: #bf5af2;
+      --c-accent-glow: rgba(255, 45, 85, 0.25);
+      --c-glass: rgba(255, 255, 255, 0.04);
+      --f-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      --f-body: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--f-body);
+      color: var(--c-text);
+      background: var(--c-black);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Noise texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Background glow */
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-glow__orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+    }
+
+    .bg-glow__orb--1 {
+      width: 400px;
+      height: 400px;
+      background: var(--c-accent);
+      top: -100px;
+      right: -100px;
+      animation: orbFloat 8s ease-in-out infinite alternate;
+    }
+
+    .bg-glow__orb--2 {
+      width: 350px;
+      height: 350px;
+      background: var(--c-purple);
+      bottom: -80px;
+      left: -80px;
+      animation: orbFloat 10s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes orbFloat {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(30px, -30px); }
+    }
+
+    .content {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      padding: 2rem clamp(1rem, 5vw, 2rem);
+      max-width: 600px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+      text-decoration: none;
+      color: var(--c-text);
+    }
+
+    .logo__icon {
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, var(--c-accent), var(--c-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border: 1px solid var(--c-accent);
+      border-radius: 6px;
+      padding: 0.15rem 0.4rem;
+      line-height: 1;
+    }
+
+    .logo__text {
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .label {
+      font-family: var(--f-heading);
+      font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--c-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .heading {
+      font-family: var(--f-heading);
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .heading span {
+      background: linear-gradient(135deg, var(--c-accent), var(--c-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .desc {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--c-text-mid);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--f-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.85rem 2.5rem;
+      border-radius: 100px;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, var(--c-accent), var(--c-purple));
+      box-shadow: 0 4px 24px var(--c-accent-glow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 48px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--c-accent-glow);
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--c-accent), transparent);
+      margin: 2.5rem auto;
+    }
+
+    .quote {
+      font-family: var(--f-heading);
+      font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+      font-weight: 500;
+      color: var(--c-text-dim);
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+    /* Pulse dot animation */
+    .pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .pulse__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+
+    .pulse__text {
+      font-family: var(--f-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--c-text-mid);
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 0.4; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Safe areas */
+    @supports (padding: env(safe-area-inset-top)) {
+      body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow" aria-hidden="true">
+    <div class="bg-glow__orb bg-glow__orb--1"></div>
+    <div class="bg-glow__orb bg-glow__orb--2"></div>
+  </div>
+
+  <main class="content">
+    <a href="/" class="logo" aria-label="PartyInsiders Home">
+      <span class="logo__icon">PI</span>
+      <span class="logo__text">PartyInsiders</span>
+    </a>
+
+    <div class="pulse">
+      <span class="pulse__dot" aria-hidden="true"></span>
+      <span class="pulse__text">Building something real</span>
+    </div>
+
+    <p class="label">Coming Soon</p>
+
+    <h1 class="heading">This Section Is<br><span>Still Behind the Velvet Rope.</span></h1>
+
+    <p class="desc">
+      We're building the world's most intelligent nightlife platform. City guides, insider timing, second-location maps, and the Party Intelligence Index&trade; &mdash; all coming soon.
+    </p>
+
+    <a href="/" class="btn">Back to Homepage</a>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <p class="quote">&ldquo;The best nights are not the loudest. They're the most understood.&rdquo;</p>
+  </main>
+
+</body>
+</html>
